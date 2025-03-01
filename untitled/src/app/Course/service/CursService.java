@@ -2,13 +2,9 @@ package app.Course.service;
 
 import app.Course.model.Curs;
 import app.Enrolment.model.Enrolment;
-import app.Enrolment.service.EnrolmentService;
-import app.Student.model.Student;
 
 
 import java.io.File;
-import java.net.StandardSocketOptions;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

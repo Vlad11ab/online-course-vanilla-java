@@ -4,8 +4,7 @@ import app.Course.model.Curs;
 import app.Course.service.CursService;
 import app.Enrolment.model.Enrolment;
 import app.Enrolment.service.EnrolmentService;
-import app.Student.model.Student;
-import app.Student.service.StudentService;
+import app.User.model.Student;
 
 import java.util.List;
 import java.util.Scanner;
@@ -14,7 +13,6 @@ public class View {
 
     private Student student;
     private CursService cursService;
-    private StudentService studentService;
     private EnrolmentService enrolmentService;
     private Scanner scanner;
 
@@ -24,7 +22,6 @@ public class View {
         this.student = student;
         this.cursService = new CursService();
         this.enrolmentService = new EnrolmentService();
-        this.studentService = new StudentService();
         this.scanner = new Scanner(System.in);
         this.play();
     }
@@ -105,11 +102,11 @@ public class View {
 
         Curs curs = cursService.getCursByName(courseName);
 
-        if(curs!=null){
-            for(Integer ids : enrolmentService.getStudentiInscrisiLaUnAnumitCurs(curs.getId())){
-                System.out.println(studentService.getStudentById(ids).getFirstName() + " " + studentService.getStudentById(ids).getLastName());
-            }
-        }
+//        if(curs!=null){
+//            for(Integer ids : enrolmentService.getStudentiInscrisiLaUnAnumitCurs(curs.getId())){
+//                System.out.println(studentService.getStudentById(ids).getFirstName() + " " + studentService.getStudentById(ids).getLastName());
+//            }
+//        }
 
     }
 
@@ -117,9 +114,9 @@ public class View {
          //todo:returnam ids studentilorinscrisi la cursurip
         //todo:apoi folosind ids gasim studentii
 
-        for(Integer ids : enrolmentService.getStudentiInscrisiLaCursuri()) {
-            System.out.println(studentService.getStudentById(ids).getFirstName() + " " + studentService.getStudentById(ids).getLastName());
-        }
+//        for(Integer ids : enrolmentService.getStudentiInscrisiLaCursuri()) {
+//            System.out.println(studentService.getStudentById(ids).getFirstName() + " " + studentService.getStudentById(ids).getLastName());
+//        }
     }
 
         private void select7(){

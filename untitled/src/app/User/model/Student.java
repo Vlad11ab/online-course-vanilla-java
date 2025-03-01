@@ -1,6 +1,6 @@
-package app.Student.model;
+package app.User.model;
 
-public class Student {
+public class Student  extends User {
     private int id;
     private String firstName;
     private String lastName;
@@ -8,6 +8,8 @@ public class Student {
     private int age;
     private String password;
 
+    private int nrCrediteNecesare;
+    private int crediteEfectuate;
 
     public Student(int id,String firstName, String lastName, String email, int age, String password) {
         this.id = id;
