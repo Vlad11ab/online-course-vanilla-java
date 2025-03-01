@@ -1,0 +1,4 @@
+1,Ana,Tepes,test@gmail.com,23,parola1
+2,Marius,Andrei,test2@gmail.com,12,parola2
+3,Ariana,Anca,test3@gmail.com,28,parola3
+4,Denis,Toropoc,test4@gmail.com,26,parola4
