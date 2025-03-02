@@ -59,6 +59,37 @@ public class UserService {
 
     }
 
+    public void afisareProfesors(){
+        for(User user : this.users){
+            if(user instanceof Profesor){
+                Profesor profesor = (Profesor) user;
+                profesor.afisareProfesor();
+            }
+        }
+    }
+
+    public void afisareStudents(){
+        for(User user : this.users){
+            if(user instanceof Student){
+                Student student = (Student) user;
+                student.afisareStudent();
+            }
+        }
+    }
+
+    public int profVarstaMax(){
+        int varstaMax = 0;
+        for(User user : this.users){
+            if(user instanceof Profesor){
+                Profesor profesor = (Profesor) user;
+                if(profesor.getAge() > varstaMax){
+                    varstaMax = profesor.getAge();
+                }
+            }
+        }
+        return varstaMax;
+    }
+
 
 
 
