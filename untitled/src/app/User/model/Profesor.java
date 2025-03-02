@@ -4,8 +4,8 @@ public class Profesor extends User {
 
    private int nrOreSaptamana;
 
-   public Profesor(int id, String firstName, String lastName, String email, String password, int nrOreSaptamana, int[] cursuri) {
-      super(id, firstName, lastName, email, password);
+   public Profesor(int id, String firstName, String lastName, String email,int age, String password, int nrOreSaptamana) {
+      super(id, firstName, lastName, email, age, password);
 
       this.nrOreSaptamana = nrOreSaptamana;
 
@@ -14,7 +14,7 @@ public class Profesor extends User {
    public Profesor(String text){
       super(text);
       String [] split = text.split(",");
-      this.nrOreSaptamana = Integer.parseInt(split[5]);
+      this.nrOreSaptamana = Integer.parseInt(split[7]);
 
    }
 
@@ -24,6 +24,17 @@ public class Profesor extends User {
    public int getNrOreSaptamana() {
       return nrOreSaptamana;
    }
+
+
+   public void afisareProfesor(){
+      System.out.println(this.descriereProfesor());
+   }
+
+   public String descriereProfesor(){
+      return "PROFESOR: " + super.descriereUser() + " NrOreSaptamana: " + this.nrOreSaptamana;
+   }
+
+
 
 }
 

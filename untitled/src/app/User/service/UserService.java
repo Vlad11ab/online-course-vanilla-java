@@ -18,9 +18,9 @@ public class UserService {
         users = new ArrayList<>();
         this.loadUsers();
 
-        }
+    }
 
-        private loadUsers(){
+    private void loadUsers(){
         String filename = "/Users/vlad11ab/Documents/mycode/incapsularea/untitled/src/app/User/data/Users.txt";
 
         File file = new File(filename);
@@ -43,17 +43,28 @@ public class UserService {
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+        }
+    }
 
-
+    public void afisareUsers(){
+        for(User user : this.users){
+            if(user instanceof Student){
+                Student student = (Student) user;
+                student.afisareStudent();
+            } else if (user instanceof Profesor){
+                Profesor profesor = (Profesor) user;
+                profesor.afisareProfesor();
+            }
         }
 
-
-        }
-
-
+    }
 
 
 
 
 
 }
+
+
+
+

@@ -1,76 +1,62 @@
 package app.User.model;
 
 public class Student  extends User {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private int age;
-    private String password;
+
 
     private int nrCrediteNecesare;
-    private int crediteEfectuate;
+    private int nrCrediteEfectuate;
 
-    public Student(int id,String firstName, String lastName, String email, int age, String password) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.age = age;
-        this.password = password;
+    public Student(int id, String firstName, String lastName, String email,int age, String password) {
+        super(id, firstName, lastName, email, age, password);
+
+        this.nrCrediteNecesare = 0;
+        this.nrCrediteEfectuate = 0;
     }
     //"Ana,Tepes,test@gmail.com,23"=>["Ana","Tepes","test@gmail.com","23"
     public Student(String text) {
-        String[] tokens = text.split(",");
-        this.id = Integer.parseInt(tokens[0]);
-        this.firstName = tokens[1];
-        this.lastName = tokens[2];
-        this.email = tokens[3];
-        this.age = Integer.parseInt(tokens[4]);
-        this.password = tokens[5];
+        super(text);
+        String[] split = text.split(",");
+//        this.id = Integer.parseInt(tokens[0]);
+//        this.firstName = tokens[1];
+//        this.lastName = tokens[2];
+//        this.email = tokens[3];
+//        this.age = Integer.parseInt(tokens[4]);
+//        this.password = tokens[5];
+          this.nrCrediteNecesare = Integer.parseInt(split[7]);
+          this.nrCrediteEfectuate = Integer.parseInt(split[8]);
     }
 
     //Setters
-    public void setId(int id) {
-        this.id = id;
+    public void setNrCrediteNecesare(int nrCrediteNecesare){
+        this.nrCrediteNecesare = nrCrediteNecesare;
     }
-    public void setFirstnAME(String firstName){
-        this.firstName = firstName;
+    public void setNrCrediteEfectuate(int nrCrediteEfectuate){
+        this.nrCrediteEfectuate = this.nrCrediteEfectuate;
     }
-    public void setLastNAME(String lastName){
-        this.lastName = lastName;
-    }
-    public void setEmail(String email){
-        this.email = email;
-    }
-    public void setAge(int age){
-        this.age = age;
-    }
-    public void setPassword(String password){}
 
     //Getters
-    public int getId() {
-        return id;
+    public int getNrCrediteNecesare(){
+        return nrCrediteNecesare;
     }
-    public String getFirstName(){
-        return firstName;
+    public int getNrCrediteEfectuate(){
+        return nrCrediteEfectuate;
     }
-    public String getLastName(){
-        return lastName;
-    }
-    public String getEmail(){
-        return email;
-    }
-    public int getAge(){
-        return age;
-    }
-    public String getPassword(){ return password;}
 
 
-    @Override
-    public String toString() {
-        return this.firstName + "," + this.lastName + "," + this.email + "," + this.age + "," + this.id + this.password + "\n";
+
+    public void afisareStudent(){
+
+
+        System.out.println(this.descriereStudent());
     }
+
+
+    public String descriereStudent(){
+        return "STUDENT: " + super.descriereUser() + " nrCrediteEfectuate: " + this.nrCrediteEfectuate + " nrCrediteNecesare: " + this.nrCrediteNecesare;
+    }
+
+
+
 
 
 
