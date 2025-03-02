@@ -25,13 +25,14 @@ public class Profesor extends User {
       return nrOreSaptamana;
    }
 
-
-   public void afisareProfesor(){
-      System.out.println(this.descriereProfesor());
+   @Override
+   public void afisare(){
+      System.out.println(this.descriere());
    }
 
-   public String descriereProfesor(){
-      return "PROFESOR: " + super.descriereUser() + " NrOreSaptamana: " + this.nrOreSaptamana;
+   @Override
+   public String descriere(){
+      return "PROFESOR: " + super.descriere() + " NrOreSaptamana: " + this.nrOreSaptamana;
    }
 
 

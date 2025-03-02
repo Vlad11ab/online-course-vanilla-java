@@ -43,16 +43,16 @@ public class Student  extends User {
     }
 
 
+    @Override
+    public void afisare(){
 
-    public void afisareStudent(){
 
-
-        System.out.println(this.descriereStudent());
+        System.out.println(this.descriere());
     }
 
-
-    public String descriereStudent(){
-        return "STUDENT: " + super.descriereUser() + " nrCrediteEfectuate: " + this.nrCrediteEfectuate + " nrCrediteNecesare: " + this.nrCrediteNecesare;
+    @Override
+    public String descriere(){
+        return "STUDENT: " + super.descriere() + " nrCrediteEfectuate: " + this.nrCrediteEfectuate + " nrCrediteNecesare: " + this.nrCrediteNecesare;
     }
 
 

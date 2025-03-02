@@ -68,11 +68,16 @@ public class User {
         return lastName;
     }
 
-    public void afisareUser(){
-        System.out.println(this.descriereUser());
+    public void afisare(){
+        System.out.println(this.descriere());
     }
 
-    public String descriereUser(){
+    public String descriere(){
         return " firstName :"+firstName + " lastName: " + lastName + " email: " + email + " age: " + age + " password: " + password;
     }
+
+
+
+
+
 }

@@ -50,10 +50,10 @@ public class UserService {
         for(User user : this.users){
             if(user instanceof Student){
                 Student student = (Student) user;
-                student.afisareStudent();
+                student.afisare();
             } else if (user instanceof Profesor){
                 Profesor profesor = (Profesor) user;
-                profesor.afisareProfesor();
+                profesor.afisare();
             }
         }
 
@@ -63,7 +63,7 @@ public class UserService {
         for(User user : this.users){
             if(user instanceof Profesor){
                 Profesor profesor = (Profesor) user;
-                profesor.afisareProfesor();
+                profesor.afisare();
             }
         }
     }
@@ -72,7 +72,7 @@ public class UserService {
         for(User user : this.users){
             if(user instanceof Student){
                 Student student = (Student) user;
-                student.afisareStudent();
+                student.afisare();
             }
         }
     }
